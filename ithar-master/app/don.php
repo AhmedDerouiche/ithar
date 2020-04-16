@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class don extends Model
 {
-    //
+    protected $fillable = [
+        'titreDon','message'
+       ];
 }

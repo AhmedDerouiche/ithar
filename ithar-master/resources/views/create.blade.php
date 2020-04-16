@@ -1,50 +1,22 @@
 @extends('parent')
+
 @section('main')
-@if($errors->any())
-<div class="alert alert-danger">
- <ul>
-  @foreach($errors->all() as $error)
-  <li>{{ $error }}</li>
-  @endforeach
- </ul>
-</div>
-@endif
-<div align="right">
- <a href="{{ route('don.index') }}" class="btn btn-default">Back</a>
+{!! Form::open([
+    'route' => 'don.store'
+]) !!}
+
+<div class="form-group">
+    {!! Form::label('TitreDon', 'TitreDon:', ['class' => 'control-label']) !!}
+    {!! Form::text('TitreDon', null, ['class' => 'form-control']) !!}
 </div>
 
-<form method="post" action="{{ route('don.store') }}" enctype="multipart/form-data">
+<div class="form-group">
+    {!! Form::label('message', 'Message:', ['class' => 'control-label']) !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control']) !!}
+</div>
 
- @csrf
- <div class="form-group">
-  <label class="col-md-4 text-right">Enter First Name</label>
-  <div class="col-md-8">
-   <input type="text" name="first_name" class="form-control input-lg" />
-  </div>
- </div>
- <br />
- <br />
- <br />
- <div class="form-group">
-  <label class="col-md-4 text-right">Enter Last Name</label>
-  <div class="col-md-8">
-   <input type="text" name="last_name" class="form-control input-lg" />
-  </div>
- </div>
- <br />
- <br />
- <br />
- <div class="form-group">
-  <label class="col-md-4 text-right">Select Profile Image</label>
-  <div class="col-md-8">
-   <input type="file" name="image" />
-  </div>
- </div>
- <br /><br /><br />
- <div class="form-group text-center">
-  <input type="submit" name="add" class="btn btn-primary input-lg" value="Add" />
- </div>
+{!! Form::submit('Create ', ['class' => 'btn btn-primary']) !!}
 
-</form>
+{!! Form::close() !!}
 
 @endsection

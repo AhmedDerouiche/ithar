@@ -1,21 +1,24 @@
+
 @extends('parent')
+
 @section('main')
 
 <table class="table table-bordered table-striped">
  <tr>
-  <th width="35%">First Name</th>
-  <th width="35%">Last Name</th>
-  <th width="30%">Action</th>
+  <th width="10%">Titre</th>
+  <th width="35%">ID_Don</th>
+  <th width="35%">Message</th>
+  <th width="30%">Id_Post</th>
  </tr>
- @foreach($don as $row)
+ @foreach($data as $row)
   <tr>
-   <td>{{ $row->first_name }}</td>
-   <td>{{ $row->last_name }}</td>
+   <td>{{ $row->titre }}</td>
+   <td>{{ $row->Message}}</td>
    <td>
     
    </td>
   </tr>
  @endforeach
 </table>
-{!! $don->links() !!}
+{!! $data->links() !!}
 @endsection

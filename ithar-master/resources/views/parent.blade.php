@@ -10,7 +10,7 @@
  <body>
   <div class="container">    
      <br />
-     <h3 align="center">Ithar </h3>
+     <h3 align="center">Projet Ithar </h3>
      <br />
      @yield('main')
     </div>
